@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -21,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search City or State" translatesAutoresizingMaskIntoConstraints="NO" id="3Hs-MC-K0h">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="523" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="m10-ML-dVN"/>
                                 </constraints>
@@ -30,6 +29,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Wrr-du-yIW"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZa-dK-K8b">
+                                <rect key="frame" x="523" y="64" width="78" height="44"/>
+                                <color key="backgroundColor" red="0.79120197892999378" green="0.79298506171598382" blue="0.82019466440422317" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="McX-nl-7G1"/>
+                                    <constraint firstAttribute="height" constant="44" id="ddK-Ib-BJd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="getButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eJ-sS-MCI"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sK-CU-pCw" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="158" width="147" height="37"/>
                                 <constraints>
@@ -320,7 +332,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="OTs-It-mvP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -359,7 +371,7 @@
                                     <constraint firstAttribute="height" constant="21" id="gPA-fy-F7t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -378,6 +390,7 @@
                             <constraint firstItem="veY-Xi-k1s" firstAttribute="centerY" secondItem="BLL-Lx-Zkh" secondAttribute="centerY" constant="1" id="BoQ-JF-RT4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" constant="402" id="Cw2-QM-vN9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TVn-no-who" secondAttribute="trailing" id="E4c-gM-azU"/>
+                            <constraint firstItem="cZa-dK-K8b" firstAttribute="leading" secondItem="3Hs-MC-K0h" secondAttribute="trailing" id="FWd-Bx-ImJ"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="sj2-ye-cgu" secondAttribute="trailing" constant="8" id="GAh-MQ-72b"/>
                             <constraint firstItem="JFv-hc-pvm" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="8" id="GHJ-ii-kKO"/>
                             <constraint firstItem="JFv-hc-pvm" firstAttribute="top" secondItem="J1i-gt-keL" secondAttribute="bottom" constant="2" id="GLQ-jN-O1G"/>
@@ -395,6 +408,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="OiN-8h-vo3" secondAttribute="trailing" id="U4B-Np-0tZ"/>
                             <constraint firstItem="1Tn-1n-FUu" firstAttribute="top" secondItem="OiN-8h-vo3" secondAttribute="bottom" constant="19" id="VSK-Nw-KJ8"/>
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VrK-Qc-GjF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cZa-dK-K8b" secondAttribute="trailing" constant="-21" id="Y1c-dd-RY5"/>
                             <constraint firstItem="FAd-TQ-jlJ" firstAttribute="top" secondItem="7sK-CU-pCw" secondAttribute="bottom" constant="8" id="ZE9-3Z-BrW"/>
                             <constraint firstItem="52U-ZN-h3x" firstAttribute="top" secondItem="7sK-CU-pCw" secondAttribute="bottom" constant="8" id="ajZ-6u-26U"/>
                             <constraint firstItem="seQ-3U-o82" firstAttribute="leading" secondItem="dUb-Sc-Mwm" secondAttribute="trailing" constant="8" id="bK2-EE-uco"/>
@@ -413,6 +427,7 @@
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="top" secondItem="JFv-hc-pvm" secondAttribute="bottom" constant="4" id="nge-VK-Krs"/>
                             <constraint firstItem="feX-gp-msW" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" id="p9V-G4-7Ch"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="FAd-TQ-jlJ" secondAttribute="trailing" constant="288" id="pdH-MY-tT1"/>
+                            <constraint firstItem="cZa-dK-K8b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qxd-mQ-aV9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JFv-hc-pvm" secondAttribute="leading" id="rL0-9J-agu"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="feX-gp-msW" secondAttribute="trailing" constant="8" id="rmJ-8J-wBy"/>
                             <constraint firstItem="7sK-CU-pCw" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="s61-5p-HZA"/>
@@ -424,6 +439,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="bQ6-ey-hgO"/>
                                 <exclude reference="ZE9-3Z-BrW"/>
                                 <exclude reference="cpI-uL-bql"/>
                                 <exclude reference="irN-k9-lab"/>
@@ -439,18 +455,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="lSA-Aa-jbw">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="search" id="LHi-1c-IiT">
-                                <connections>
-                                    <action selector="getButtonPressed:" destination="BYZ-38-t0r" id="Oe5-Hy-IEM"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="localIcon" id="cZw-LT-MDo">
-                                <connections>
-                                    <action selector="getLocation" destination="BYZ-38-t0r" id="rlm-Hh-Psz"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="localIcon" id="cZw-LT-MDo">
+                            <connections>
+                                <action selector="getLocation" destination="BYZ-38-t0r" id="rlm-Hh-Psz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="LocationLabel" destination="feX-gp-msW" id="MH1-dA-Wvg"/>
@@ -490,6 +499,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="localIcon" width="44" height="44"/>
+        <image name="localIcon" width="35" height="35"/>
     </resources>
 </document>

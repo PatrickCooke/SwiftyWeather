@@ -153,7 +153,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    @IBAction private func getButtonPressed(sender: UIBarButtonItem) {
+    @IBAction private func getButtonPressed() {
         addressSearchBar.resignFirstResponder()
         performGeocode()
         addressSearchBar.text = ""
@@ -181,7 +181,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let windspeed2 = Int(windspeed)
             windSpeedLabel.text = "\(windspeed2) mph"
         }
-        if let currentPrecip = dataManager.currentWeather.curPrecip {
+//        if let currentPrecip = dataManager.currentWeather.curPrecip {
+//            let precip = Int(currentPrecip * 100)
+//            precipLabel.text = "\(precip)%"
+//        }
+        if let currentPrecip = dataManager.currentWeather.dailyforcast.first?.precipOdds {
             let precip = Int(currentPrecip * 100)
             precipLabel.text = "\(precip)%"
         }
@@ -232,8 +236,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             placeMark = placeArray?[0]
             if let city = placeMark.addressDictionary?["City"] as? NSString { // City
                 print(city)
+                if let state = placeMark.addressDictionary?["State"] as? NSString {
+                    print(state)
+             
                 let coords = "\(locValue.latitude),\(locValue.longitude)"
                 self.dataManager.getDataFromServer(coords, city: city as String)
+            }
             }
         }
     }
