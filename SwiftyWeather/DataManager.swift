@@ -20,7 +20,7 @@ class DataManager: NSObject {
 
     
     func geoCoder(addressString: String) {
-        print(addressString)
+        //print(addressString)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         defer {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -32,7 +32,7 @@ class DataManager: NSObject {
                     return
                 }
                 guard let city = addressDict["City"] else {
-                    print(addressDict)
+                    //print(addressDict)
                     return
                 }
                 guard let state = addressDict["State"] else {
@@ -44,7 +44,7 @@ class DataManager: NSObject {
                 
                 //print(state)
                 self.currentWeather = Weather()
-                print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
+                //print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
                 self.currentWeather.curCity = (city) as! String
                 self.currentWeather.locLat = loc.coordinate.latitude
                 self.currentWeather.locLon = loc.coordinate.longitude
@@ -90,7 +90,7 @@ class DataManager: NSObject {
                 //print("\(dailyWeatherDict)")
                 self.currentWeather.dailySummary = dailyWeatherDict.objectForKey("summary") as! String
                 let dataDailyArray = dailyWeatherDict.objectForKey("data") as! [NSDictionary]
-                print("\(dataDailyArray)")
+                //print("\(dataDailyArray)")
                 
                 
                 var dailyWArray = [DailyWeather]()

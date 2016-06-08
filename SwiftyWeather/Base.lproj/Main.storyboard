@@ -71,21 +71,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52U-ZN-h3x" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="203" width="66" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="8vF-ab-gOw"/>
-                                    <constraint firstAttribute="height" constant="21" id="Q3l-x9-AIa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-TQ-jlJ" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
                                 <rect key="frame" x="91" y="203" width="76" height="21"/>
                                 <constraints>
@@ -102,9 +87,9 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-Sc-Mwm" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="228" width="49" height="26"/>
+                                <rect key="frame" x="116" y="228" width="331" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="91b-Zd-sUK"/>
+                                    <constraint firstAttribute="width" constant="188" id="91b-Zd-sUK"/>
                                     <constraint firstAttribute="height" constant="26" id="vdP-EK-KvK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
@@ -115,13 +100,19 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="91b-Zd-sUK"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-3U-o82" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
-                                <rect key="frame" x="77" y="230" width="90" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chance of Rain:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seQ-3U-o82" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
+                                <rect key="frame" x="21" y="230" width="90" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="354" id="557-Ap-Zmv"/>
                                     <constraint firstAttribute="width" constant="90" id="5c2-NA-N0Z"/>
                                     <constraint firstAttribute="height" constant="21" id="g5z-Wz-BNV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="sce-XX-uWL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,6 +125,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="557-Ap-Zmv"/>
+                                        <exclude reference="sce-XX-uWL"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -374,6 +366,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52U-ZN-h3x" customClass="RoundedLabel" customModule="SwiftyWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="203" width="66" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="8vF-ab-gOw"/>
+                                    <constraint firstAttribute="height" constant="21" id="Q3l-x9-AIa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95602115399999998" green="0.95132935110000005" blue="0.96210323949999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -390,6 +397,7 @@
                             <constraint firstItem="veY-Xi-k1s" firstAttribute="centerY" secondItem="BLL-Lx-Zkh" secondAttribute="centerY" constant="1" id="BoQ-JF-RT4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BLL-Lx-Zkh" secondAttribute="trailing" constant="402" id="Cw2-QM-vN9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TVn-no-who" secondAttribute="trailing" id="E4c-gM-azU"/>
+                            <constraint firstItem="seQ-3U-o82" firstAttribute="top" secondItem="52U-ZN-h3x" secondAttribute="bottom" constant="6" id="EZU-u2-NBf"/>
                             <constraint firstItem="cZa-dK-K8b" firstAttribute="leading" secondItem="3Hs-MC-K0h" secondAttribute="trailing" id="FWd-Bx-ImJ"/>
                             <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="sj2-ye-cgu" secondAttribute="trailing" constant="8" id="GAh-MQ-72b"/>
                             <constraint firstItem="JFv-hc-pvm" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="8" id="GHJ-ii-kKO"/>
@@ -404,8 +412,10 @@
                             <constraint firstItem="veY-Xi-k1s" firstAttribute="top" secondItem="dUb-Sc-Mwm" secondAttribute="bottom" constant="4" id="LoE-Kw-YhO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="WoC-eU-5kP" secondAttribute="leading" constant="20" id="P7Q-3d-ZWe"/>
                             <constraint firstItem="WoC-eU-5kP" firstAttribute="top" secondItem="KcY-1q-kNT" secondAttribute="bottom" constant="8" id="PZ8-dU-vMA"/>
+                            <constraint firstItem="seQ-3U-o82" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="1" id="S2o-Lh-8QO"/>
                             <constraint firstItem="FAd-TQ-jlJ" firstAttribute="leading" secondItem="52U-ZN-h3x" secondAttribute="trailing" constant="5" id="Ttg-aC-sNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OiN-8h-vo3" secondAttribute="trailing" id="U4B-Np-0tZ"/>
+                            <constraint firstItem="OiN-8h-vo3" firstAttribute="leading" secondItem="dUb-Sc-Mwm" secondAttribute="trailing" constant="8" id="VGe-4G-uuc"/>
                             <constraint firstItem="1Tn-1n-FUu" firstAttribute="top" secondItem="OiN-8h-vo3" secondAttribute="bottom" constant="19" id="VSK-Nw-KJ8"/>
                             <constraint firstItem="KcY-1q-kNT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VrK-Qc-GjF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cZa-dK-K8b" secondAttribute="trailing" constant="-21" id="Y1c-dd-RY5"/>
@@ -433,6 +443,7 @@
                             <constraint firstItem="7sK-CU-pCw" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="s61-5p-HZA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="52U-ZN-h3x" secondAttribute="leading" id="sZJ-EG-9zM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WoC-eU-5kP" secondAttribute="bottom" id="t3W-w2-gxn"/>
+                            <constraint firstItem="dUb-Sc-Mwm" firstAttribute="leading" secondItem="seQ-3U-o82" secondAttribute="trailing" constant="5" id="uUb-dG-Mlv"/>
                             <constraint firstItem="sj2-ye-cgu" firstAttribute="top" secondItem="3Hs-MC-K0h" secondAttribute="bottom" constant="50" id="y9Y-r2-tQS"/>
                             <constraint firstItem="J1i-gt-keL" firstAttribute="top" secondItem="hxu-LN-VRx" secondAttribute="bottom" constant="3" id="z5R-8P-nZ3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dUb-Sc-Mwm" secondAttribute="leading" id="z5c-fc-YnS"/>
@@ -442,7 +453,10 @@
                                 <exclude reference="bQ6-ey-hgO"/>
                                 <exclude reference="ZE9-3Z-BrW"/>
                                 <exclude reference="cpI-uL-bql"/>
+                                <exclude reference="bK2-EE-uco"/>
                                 <exclude reference="irN-k9-lab"/>
+                                <exclude reference="8nc-z7-MWF"/>
+                                <exclude reference="z5c-fc-YnS"/>
                                 <exclude reference="Cw2-QM-vN9"/>
                                 <exclude reference="mUm-BQ-y6i"/>
                                 <exclude reference="GHJ-ii-kKO"/>

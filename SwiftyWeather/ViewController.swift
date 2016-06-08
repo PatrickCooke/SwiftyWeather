@@ -185,17 +185,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //            let precip = Int(currentPrecip * 100)
 //            precipLabel.text = "\(precip)%"
 //        }
-        if let currentPrecip = dataManager.currentWeather.dailyforcast.first?.precipOdds {
-            let precip = Int(currentPrecip * 100)
-            precipLabel.text = "\(precip)%"
+        if let dailyPrecip = dataManager.currentWeather.dailyforcast.first?.precipOdds {
+            if let nowprecip = dataManager.currentWeather.curPrecip {
+            let dprecip = Int(dailyPrecip * 100)
+                let nprecip = Int(nowprecip * 100)
+            precipLabel.text = "for now: \(nprecip), for later: \(dprecip)%"
         }
         if let currentIcon = dataManager.currentWeather.curIcon {
             iconImageView.image = UIImage (named: currentIcon)
-        }
+            print("\(currentIcon)")
+            }
+            
         if let currentSummary = dataManager.currentWeather.curSummary {
             if let dailysummary = dataManager.currentWeather.dailySummary{
                 if let hourlysummary = dataManager.currentWeather.hourlySummary {
-            summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
+                        summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
+                    }
                 }
             }
         }
@@ -208,7 +213,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    private func blankeverything() {
+    func blankeverything() {
         LocationLabel.text = ""
         currentTempLabel.text = ""
         feelsLikeLabel.text = ""
