@@ -484,6 +484,7 @@
                         <outlet property="highLowLabel" destination="1Tn-1n-FUu" id="kai-xS-ZAE"/>
                         <outlet property="iconImageView" destination="OiN-8h-vo3" id="cQx-Ff-d7g"/>
                         <outlet property="locTableView" destination="WoC-eU-5kP" id="h6H-G5-j02"/>
+                        <outlet property="locationBarButton" destination="cZw-LT-MDo" id="Dn5-c5-COu"/>
                         <outlet property="precipLabel" destination="dUb-Sc-Mwm" id="WA3-fg-NAo"/>
                         <outlet property="summaryTxtView" destination="hxu-LN-VRx" id="bKT-JY-Vzi"/>
                         <outlet property="windSpeedLabel" destination="BLL-Lx-Zkh" id="hi0-5V-5dt"/>

@@ -67,7 +67,7 @@ class DataManager: NSObject {
         let urlSession = NSURLSession.sharedSession()
         let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) in
             guard let unwrappedData =  data else {
-                print("No Data")
+//                print("No Data")
                 return
             }
             do {
@@ -132,9 +132,9 @@ class DataManager: NSObject {
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
                 })
-                print("sent info")
+//                print("sent info")
             } catch {
-                print("JSON Parsing Error")
+//                print("JSON Parsing Error")
             }
             
         }

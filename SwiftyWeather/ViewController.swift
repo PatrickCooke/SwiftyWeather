@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var highLowLabel     :UILabel!
     var locationManager = CLLocationManager()
     @IBOutlet weak var dailyCollectionView  :UICollectionView!
+    @IBOutlet weak var locationBarButton    :UIBarButtonItem!
 
     
     //MARK: - CollectionView Methods
@@ -102,7 +103,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let lon = objectslected.locLon {
                 let coords = "\(lat),\(lon)"
                 if let city = objectslected.locDescription {
-                print("Pre \(coords)")
+//                print("Pre \(coords)")
                 dataManager.getDataFromServer(coords, city: city)
                 }
             }
@@ -114,7 +115,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func fetchEntries() -> [Locations]? {
         let fetchRequest = NSFetchRequest(entityName: "Locations")
-        print("fetch")
+//        print("fetch")
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "locDescription", ascending: true)]
         do {
             let tempArray = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Locations]
@@ -146,10 +147,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let address = addressSearchBar.text {
                 dataManager.geoCoder(address)
             } else {
-                print("Hey type something first")
+//                print("Hey type something first")
             }
         } else {
-            print("server not available at get")
+//            print("server not available at get")
         }
     }
     
@@ -193,7 +194,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if let currentIcon = dataManager.currentWeather.curIcon {
             iconImageView.image = UIImage (named: currentIcon)
-            print("\(currentIcon)")
+//            print("\(currentIcon)")
             }
             
         if let currentSummary = dataManager.currentWeather.curSummary {
@@ -230,23 +231,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func setUsersClosestCity() {
-        let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        geoCoder.reverseGeocodeLocation(location) {
-            (placemarks, error) -> Void in
-            let placeArray = placemarks as [CLPlacemark]!
-            var placeMark: CLPlacemark! // Place details
-            placeMark = placeArray?[0]
-            if let city = placeMark.addressDictionary?["City"] as? NSString { // City
-                print(city)
-                if let state = placeMark.addressDictionary?["State"] as? NSString {
-                    print(state)
-             
-                let coords = "\(locValue.latitude),\(locValue.longitude)"
-                self.dataManager.getDataFromServer(coords, city: city as String)
+        if CLLocationManager.locationServicesEnabled() && UI_USER_INTERFACE_IDIOM() != .Pad {
+            
+            guard let loc = locationManager.location else {
+                return
             }
+            let locValue = loc.coordinate
+            let geoCoder = CLGeocoder()
+            let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+            geoCoder.reverseGeocodeLocation(location) {
+                (placemarks, error) -> Void in
+                let placeArray = placemarks as [CLPlacemark]!
+                var placeMark: CLPlacemark! // Place details
+                placeMark = placeArray?[0]
+                if let city = placeMark.addressDictionary?["City"] as? NSString { // City
+                    //                print(city)
+                    //                if let state = placeMark.addressDictionary?["State"] as? NSString {
+                    //                    print(state)
+                    
+                    let coords = "\(locValue.latitude),\(locValue.longitude)"
+                    self.dataManager.getDataFromServer(coords, city: city as String)
+                    //            }
+                }
             }
         }
     }
@@ -270,6 +276,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        if UI_USER_INTERFACE_IDIOM() == .Pad {
+            locationBarButton.enabled = false
+            locationBarButton.tintColor = UIColor.clearColor()
+        }
         
     }
     
