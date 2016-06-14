@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SwiftyWeatherTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>433946481CEA33C10093A8D7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4374A7E91D10B8050025B7E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
