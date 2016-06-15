@@ -20,7 +20,7 @@ class DataManager: NSObject {
     
     
     func geoCoder(addressString: String) {
-        print(addressString)
+//        print(addressString)
         #if os(tvOS)
         #else
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -35,7 +35,7 @@ class DataManager: NSObject {
                     return
                 }
                 guard let city = addressDict["City"] else {
-                    print(addressDict)
+//                    print(addressDict)
                     return
                 }
                 guard let state = addressDict["State"] else {
@@ -44,10 +44,9 @@ class DataManager: NSObject {
                 guard let loc = placemark.location else {
                     return
                 }
-                
-                //print(state)
+
                 self.currentWeather = Weather()
-                print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
+//                print("City: \(city) Lat:\(loc.coordinate.latitude) \(loc.coordinate.longitude)")
                 self.currentWeather.curCity = (city) as! String
                 self.currentWeather.locLat = loc.coordinate.latitude
                 self.currentWeather.locLon = loc.coordinate.longitude
@@ -73,7 +72,7 @@ class DataManager: NSObject {
         let urlSession = NSURLSession.sharedSession()
         let task = urlSession.dataTaskWithRequest(urlRequest) { (data, response, error) in
             guard let unwrappedData =  data else {
-                print("No Data")
+//                print("No Data")
                 return
             }
             do {
@@ -96,7 +95,7 @@ class DataManager: NSObject {
                 //print("\(dailyWeatherDict)")
                 self.currentWeather.dailySummary = dailyWeatherDict.objectForKey("summary") as! String
                 let dataDailyArray = dailyWeatherDict.objectForKey("data") as! [NSDictionary]
-                print("\(dataDailyArray)")
+//                print("\(dataDailyArray)")
                 
                 
                 var dailyWArray = [DailyWeather]()
@@ -104,7 +103,6 @@ class DataManager: NSObject {
                     
                     let dailyW = DailyWeather()
                     let tempMax = dayWeatherDict.objectForKey("temperatureMax")
-                    //print("Max: \(tempMax)")
                     dailyW.dayMaxTemp = tempMax as! Double
                     let tempMin = dayWeatherDict.objectForKey("temperatureMin")
                     dailyW.dayMinTemp = tempMin as! Double
@@ -121,26 +119,13 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
-                
-                /*          THIS IS HOW YOU GET THE DAY OF THE WEEK
-                 
-                 if let date = self.currentWeather.dailyforcast.first?.time {
-                 print("raw date format \(date)")
-                 let date1 = NSDate(timeIntervalSince1970: date)
-                 print("converted date: \(date1)")
-                 let formatter = NSDateFormatter()
-                 formatter.dateFormat = "E"
-                 let dayOfWeek = formatter.stringFromDate(date1)
-                 print(dayOfWeek)
-                 }
-                 */
-                
+
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))
                 })
-                print("sent info")
+//                print("sent info")
             } catch {
-                print("JSON Parsing Error")
+//                print("JSON Parsing Error")
             }
             
         }

@@ -17,15 +17,15 @@ class NetworkManager: NSObject {
         let reach = note.object as! Reachability
         serverAvailable = !(reach.currentReachabilityStatus().rawValue == NotReachable.rawValue)
         if serverAvailable {
-            print("Server Available")
+//            print("Server Available")
         } else {
-            print("Server NOT Available")
+//            print("Server NOT Available")
         }
     }
     
     override init() {
         super.init()
-        print("Starting Network Manager")
+//        print("Starting Network Manager")
         let dataManager = DataManager.sharedInstance
         serverReach = Reachability(hostname: dataManager.baseURL)
         serverReach?.startNotifier()

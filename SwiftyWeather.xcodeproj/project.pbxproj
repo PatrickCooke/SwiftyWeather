@@ -23,6 +23,7 @@
 		4374A7F21D10B8050025B7E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4374A7F01D10B8050025B7E5 /* Main.storyboard */; };
 		43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A755561CF6226000E5B7F6 /* DailyWeather.swift */; };
 		43D3EDE41D1182530031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43DC922A1CF778DA0062C5CC /* Assets.xcassets */; };
+		43D3EDE51D11894B0031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4374A7F31D10B8050025B7E5 /* Assets.xcassets */; };
 		43DC92251CF75E1B0062C5CC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92241CF75E1B0062C5CC /* RoundedButton.swift */; };
 		43DC92271CF75EAA0062C5CC /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */; };
 		43DC92291CF75ECF0062C5CC /* RoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */; };
@@ -250,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D3EDE41D1182530031F627 /* Assets.xcassets in Resources */,
+				43D3EDE51D11894B0031F627 /* Assets.xcassets in Resources */,
 				4374A7F21D10B8050025B7E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
