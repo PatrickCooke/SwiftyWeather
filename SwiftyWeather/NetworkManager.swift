@@ -17,9 +17,9 @@ class NetworkManager: NSObject {
         let reach = note.object as! Reachability
         serverAvailable = !(reach.currentReachabilityStatus().rawValue == NotReachable.rawValue)
         if serverAvailable {
-//            print("Server Available")
+            print("Server Available")
         } else {
-//            print("Server NOT Available")
+            print("Server NOT Available")
         }
     }
     
@@ -31,6 +31,6 @@ class NetworkManager: NSObject {
         serverReach?.startNotifier()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
     }
-
-
+    
+    
 }
