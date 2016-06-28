@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xP-u3-J2v">
-                                <rect key="frame" x="20" y="20" width="1670" height="46"/>
+                                <rect key="frame" x="43" y="20" width="1591" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="SXc-qV-WP5"/>
                                 </constraints>
@@ -239,7 +239,7 @@
                             <constraint firstItem="0jO-Cd-1Pl" firstAttribute="leading" secondItem="JLh-ow-ROd" secondAttribute="trailing" constant="8" id="TFQ-qJ-TMs"/>
                             <constraint firstItem="e14-aV-sCj" firstAttribute="leading" secondItem="lhh-1g-Jj9" secondAttribute="trailing" constant="8" id="VWV-ao-fsH"/>
                             <constraint firstItem="Pi6-hI-vEo" firstAttribute="leading" secondItem="P4y-SI-OWT" secondAttribute="leadingMargin" constant="11" id="arr-EX-Rjv"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2xP-u3-J2v" secondAttribute="leading" id="axE-Sa-oXk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2xP-u3-J2v" secondAttribute="leading" constant="-23" id="axE-Sa-oXk"/>
                             <constraint firstItem="g0X-2L-SQl" firstAttribute="top" secondItem="MKm-cf-yWW" secondAttribute="bottom" constant="8" id="cq9-S6-54F"/>
                             <constraint firstItem="MKm-cf-yWW" firstAttribute="top" secondItem="Pi6-hI-vEo" secondAttribute="bottom" constant="14" id="cra-7R-yej"/>
                             <constraint firstItem="JiE-bZ-Ez5" firstAttribute="top" secondItem="g0X-2L-SQl" secondAttribute="bottom" constant="8" id="e2O-aR-hiU"/>
@@ -258,7 +258,7 @@
                             <constraint firstItem="gpI-Up-cLt" firstAttribute="top" secondItem="Pi6-hI-vEo" secondAttribute="bottom" constant="14" id="yJI-xO-Vdb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="g0X-2L-SQl" secondAttribute="leading" id="yyk-4K-wA3"/>
                             <constraint firstItem="gSg-x2-iIh" firstAttribute="top" secondItem="JiE-bZ-Ez5" secondAttribute="bottom" constant="19" id="zFU-8o-Pfb"/>
-                            <constraint firstItem="U7s-dh-fwy" firstAttribute="leading" secondItem="2xP-u3-J2v" secondAttribute="trailing" constant="10" id="zxH-MZ-Z4c"/>
+                            <constraint firstItem="U7s-dh-fwy" firstAttribute="leading" secondItem="2xP-u3-J2v" secondAttribute="trailing" constant="66" id="zxH-MZ-Z4c"/>
                         </constraints>
                     </view>
                     <connections>

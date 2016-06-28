@@ -21,6 +21,15 @@
 		4374A7ED1D10B8050025B7E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374A7EC1D10B8050025B7E5 /* AppDelegate.swift */; };
 		4374A7EF1D10B8050025B7E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374A7EE1D10B8050025B7E5 /* ViewController.swift */; };
 		4374A7F21D10B8050025B7E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4374A7F01D10B8050025B7E5 /* Main.storyboard */; };
+		43914C6F1D230B540082FFA2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43914C6E1D230B540082FFA2 /* NotificationCenter.framework */; };
+		43914C721D230B540082FFA2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43914C711D230B540082FFA2 /* TodayViewController.swift */; };
+		43914C751D230B540082FFA2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43914C731D230B540082FFA2 /* MainInterface.storyboard */; };
+		43914C791D230B540082FFA2 /* SwiftyWeatherWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43914C6C1D230B540082FFA2 /* SwiftyWeatherWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43914C7E1D230BC20082FFA2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946681CEA356D0093A8D7 /* NetworkManager.swift */; };
+		43914C811D2310EB0082FFA2 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A755561CF6226000E5B7F6 /* DailyWeather.swift */; };
+		43914C821D2313740082FFA2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 433946601CEA34220093A8D7 /* Reachability.m */; };
+		43914C841D2313D30082FFA2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946631CEA344B0093A8D7 /* Weather.swift */; };
+		43914C851D2314A40082FFA2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946661CEA355D0093A8D7 /* DataManager.swift */; };
 		43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A755561CF6226000E5B7F6 /* DailyWeather.swift */; };
 		43D3EDE41D1182530031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43DC922A1CF778DA0062C5CC /* Assets.xcassets */; };
 		43D3EDE51D11894B0031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4374A7F31D10B8050025B7E5 /* Assets.xcassets */; };
@@ -36,6 +45,30 @@
 		43F5A5EE1D1180690001779B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 433946601CEA34220093A8D7 /* Reachability.m */; };
 		43F5A5EF1D1180C80001779B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946681CEA356D0093A8D7 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43914C771D230B540082FFA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 433946411CEA33C10093A8D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43914C6B1D230B540082FFA2;
+			remoteInfo = SwiftyWeatherWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43914C7D1D230B540082FFA2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				43914C791D230B540082FFA2 /* SwiftyWeatherWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		433946491CEA33C10093A8D7 /* SwiftyWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +92,12 @@
 		4374A7F11D10B8050025B7E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4374A7F31D10B8050025B7E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4374A7F51D10B8050025B7E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43914C6C1D230B540082FFA2 /* SwiftyWeatherWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftyWeatherWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		43914C6E1D230B540082FFA2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		43914C711D230B540082FFA2 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		43914C741D230B540082FFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		43914C761D230B540082FFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43914C831D2313950082FFA2 /* SwiftyWeatherWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftyWeatherWidget-Bridging-Header.h"; sourceTree = "<group>"; };
 		43A755561CF6226000E5B7F6 /* DailyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 		43DC92241CF75E1B0062C5CC /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
@@ -83,6 +122,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43914C691D230B540082FFA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43914C6F1D230B540082FFA2 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +138,8 @@
 			children = (
 				4339464B1CEA33C10093A8D7 /* SwiftyWeather */,
 				4374A7EB1D10B8050025B7E5 /* SwiftyWeatherTV */,
+				43914C701D230B540082FFA2 /* SwiftyWeatherWidget */,
+				43914C6D1D230B540082FFA2 /* Frameworks */,
 				4339464A1CEA33C10093A8D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +149,7 @@
 			children = (
 				433946491CEA33C10093A8D7 /* SwiftyWeather.app */,
 				4374A7EA1D10B8050025B7E5 /* SwiftyWeatherTV.app */,
+				43914C6C1D230B540082FFA2 /* SwiftyWeatherWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +210,25 @@
 			path = SwiftyWeatherTV;
 			sourceTree = "<group>";
 		};
+		43914C6D1D230B540082FFA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43914C6E1D230B540082FFA2 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43914C701D230B540082FFA2 /* SwiftyWeatherWidget */ = {
+			isa = PBXGroup;
+			children = (
+				43914C711D230B540082FFA2 /* TodayViewController.swift */,
+				43914C731D230B540082FFA2 /* MainInterface.storyboard */,
+				43914C831D2313950082FFA2 /* SwiftyWeatherWidget-Bridging-Header.h */,
+				43914C761D230B540082FFA2 /* Info.plist */,
+			);
+			path = SwiftyWeatherWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,10 +239,12 @@
 				433946451CEA33C10093A8D7 /* Sources */,
 				433946461CEA33C10093A8D7 /* Frameworks */,
 				433946471CEA33C10093A8D7 /* Resources */,
+				43914C7D1D230B540082FFA2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				43914C781D230B540082FFA2 /* PBXTargetDependency */,
 			);
 			name = SwiftyWeather;
 			productName = SwiftyWeather;
@@ -197,6 +268,23 @@
 			productReference = 4374A7EA1D10B8050025B7E5 /* SwiftyWeatherTV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		43914C6B1D230B540082FFA2 /* SwiftyWeatherWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43914C7C1D230B540082FFA2 /* Build configuration list for PBXNativeTarget "SwiftyWeatherWidget" */;
+			buildPhases = (
+				43914C681D230B540082FFA2 /* Sources */,
+				43914C691D230B540082FFA2 /* Frameworks */,
+				43914C6A1D230B540082FFA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyWeatherWidget;
+			productName = SwiftyWeatherWidget;
+			productReference = 43914C6C1D230B540082FFA2 /* SwiftyWeatherWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,6 +301,11 @@
 					};
 					4374A7E91D10B8050025B7E5 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6L9J2XXKYC;
+					};
+					43914C6B1D230B540082FFA2 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6L9J2XXKYC;
 					};
 				};
 			};
@@ -231,6 +324,7 @@
 			targets = (
 				433946481CEA33C10093A8D7 /* SwiftyWeather */,
 				4374A7E91D10B8050025B7E5 /* SwiftyWeatherTV */,
+				43914C6B1D230B540082FFA2 /* SwiftyWeatherWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +347,14 @@
 				43D3EDE41D1182530031F627 /* Assets.xcassets in Resources */,
 				43D3EDE51D11894B0031F627 /* Assets.xcassets in Resources */,
 				4374A7F21D10B8050025B7E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43914C6A1D230B540082FFA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43914C751D230B540082FFA2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +397,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		43914C681D230B540082FFA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43914C811D2310EB0082FFA2 /* DailyWeather.swift in Sources */,
+				43914C851D2314A40082FFA2 /* DataManager.swift in Sources */,
+				43914C7E1D230BC20082FFA2 /* NetworkManager.swift in Sources */,
+				43914C721D230B540082FFA2 /* TodayViewController.swift in Sources */,
+				43914C841D2313D30082FFA2 /* Weather.swift in Sources */,
+				43914C821D2313740082FFA2 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43914C781D230B540082FFA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43914C6B1D230B540082FFA2 /* SwiftyWeatherWidget */;
+			targetProxy = 43914C771D230B540082FFA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		433946501CEA33C10093A8D7 /* Main.storyboard */ = {
@@ -320,6 +443,14 @@
 				4374A7F11D10B8050025B7E5 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43914C731D230B540082FFA2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43914C741D230B540082FFA2 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -417,6 +548,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeather;
@@ -434,6 +566,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftyWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeather;
@@ -448,10 +581,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeatherTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeatherTV/SwiftyWeatherTV-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 3;
@@ -464,14 +600,45 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeatherTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherTV;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeatherTV/SwiftyWeatherTV-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		43914C7A1D230B540082FFA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SwiftyWeatherWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeather.SwiftyWeatherWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeatherWidget/SwiftyWeatherWidget-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		43914C7B1D230B540082FFA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SwiftyWeatherWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeather.SwiftyWeatherWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftyWeatherWidget/SwiftyWeatherWidget-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -504,6 +671,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		43914C7C1D230B540082FFA2 /* Build configuration list for PBXNativeTarget "SwiftyWeatherWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43914C7A1D230B540082FFA2 /* Debug */,
+				43914C7B1D230B540082FFA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
