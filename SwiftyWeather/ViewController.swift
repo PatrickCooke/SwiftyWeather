@@ -26,11 +26,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var summaryTxtView   :UITextView!
     private var locArray = [Locations]()
     private var dailyArray = [DailyWeather]()
+    private var hourlyArray = [HourlyWeather]()
     @IBOutlet weak var locTableView     :UITableView!
     @IBOutlet weak var highLowLabel     :UILabel!
     var locationManager = CLLocationManager()
     @IBOutlet weak var dailyCollectionView  :UICollectionView!
     @IBOutlet weak var locationBarButton    :UIBarButtonItem!
+    @IBOutlet weak var hourDaySegCtrl       :UISegmentedControl!
 
     
     //MARK: - CollectionView Methods
@@ -40,38 +42,92 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dailyArray.count
+        switch hourDaySegCtrl.selectedSegmentIndex {
+        case 0:
+            return dailyArray.count
+        case 1:
+            return hourlyArray.count
+        default:
+            return dailyArray.count
+        }
     }
-
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DailyWeatherCell
-        
-        let selecteddate = dailyArray[indexPath.row]
-        
-        if let date = selecteddate.time {
-            //            print("raw date format \(date)")
-            let date1 = NSDate(timeIntervalSince1970: date)
-            //            print("converted date: \(date1)")
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "E"
-            let dayOfWeek = formatter.stringFromDate(date1)
-            //            print(dayOfWeek)
-            if let todayHigh = selecteddate.dayMaxTemp {
-                if let todayLow = selecteddate.dayMinTemp {
-                    let high = Int(todayHigh)
-                    let low = Int(todayLow)
-                    cell.dateLabel.text = "\(dayOfWeek): \(high)°F/\(low)°F"
+        switch hourDaySegCtrl.selectedSegmentIndex {
+        case 0:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DailyWeatherCell
+            
+            let selecteddate = dailyArray[indexPath.row]
+            
+            if let date = selecteddate.time {
+                //            print("raw date format \(date)")
+                let date1 = NSDate(timeIntervalSince1970: date)
+                //            print("converted date: \(date1)")
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = "E"
+                let dayOfWeek = formatter.stringFromDate(date1)
+                //            print(dayOfWeek)
+                if let todayHigh = selecteddate.dayMaxTemp {
+                    if let todayLow = selecteddate.dayMinTemp {
+                        let high = Int(todayHigh)
+                        let low = Int(todayLow)
+                        cell.dateLabel.text = "\(dayOfWeek): \(high)°F/\(low)°F"
+                    }
                 }
+                
+            }
+            if let icon = selecteddate.dayIcon {
+                cell.dateIcon.image = UIImage (named: icon)
+            }
+            return cell
+        case 1:
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("hcell", forIndexPath: indexPath) as! HourlyWeatherCell
+            
+            let selectedcell = hourlyArray[indexPath.row]
+            
+            if let date = selectedcell.hourTime {
+                //            print("raw date format \(date)")
+                let date1 = NSDate(timeIntervalSince1970: date)
+                //            print("converted date: \(date1)")
+                let formatter = NSDateFormatter()
+                formatter.dateFormat = "E h:mma"
+                let dayOfWeek = formatter.stringFromDate(date1)
+                //            print(dayOfWeek)
+                cell.timeLabel.text = dayOfWeek
             }
             
+            if let tempactual = selectedcell.hourActTemp {
+                let actTempInt = Int(tempactual)
+                cell.actTempLabel.text = "Temperature: \(actTempInt)°F"
+            }
+            
+            if let tempFeels = selectedcell.hourAppTemp {
+                let appTempInt = Int(tempFeels)
+                    cell.appTempLabel.text = "Feels like: \(appTempInt)°F"
+            }
+            
+            if let precip = selectedcell.hourPrecip {
+                let precipInt = Int(precip * 100)
+                if let type = selectedcell.hourPrecipType {
+                    cell.precipLabel.text = "\(precipInt)% chance of \(type)"
+                }
+            }
+            return cell
+            
+        default:
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! DailyWeatherCell
+            return cell
         }
-        if let icon = selecteddate.dayIcon {
-            cell.dateIcon.image = UIImage (named: icon)
-        }
-        return cell
     }
+        
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(125, 75)
+    }
+    
+    @IBAction func changeCollectionView() {
+        dailyCollectionView.reloadData()
     }
     
     //MARK: - Table Methods
@@ -170,22 +226,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let currentCity = dataManager.currentWeather.curCity{
             LocationLabel.text = currentCity
         }
+        
         if let currentTemp = dataManager.currentWeather.curTemp{
             let curTemp = Int(currentTemp)
             currentTempLabel.text = ("\(curTemp)°F")
         }
+        
         if let apptemp = dataManager.currentWeather.curAppTemp {
             let estimateTemp = Int(apptemp)
         feelsLikeLabel.text = ("\(estimateTemp) °F")
         }
+        
         if let windspeed = dataManager.currentWeather.curWind {
             let windspeed2 = Int(windspeed)
             windSpeedLabel.text = "\(windspeed2) mph"
         }
-//        if let currentPrecip = dataManager.currentWeather.curPrecip {
-//            let precip = Int(currentPrecip * 100)
-//            precipLabel.text = "\(precip)%"
-//        }
+        
         if let dailyPrecip = dataManager.currentWeather.dailyforcast.first?.precipOdds {
             if let nowprecip = dataManager.currentWeather.curPrecip {
             let dprecip = Int(dailyPrecip * 100)
@@ -194,13 +250,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if let currentIcon = dataManager.currentWeather.curIcon {
             iconImageView.image = UIImage (named: currentIcon)
-//            print("\(currentIcon)")
             }
             
         if let currentSummary = dataManager.currentWeather.curSummary {
             if let dailysummary = dataManager.currentWeather.dailySummary{
                 if let hourlysummary = dataManager.currentWeather.hourlySummary {
                         summaryTxtView.text = "The current weather is: " + currentSummary + ". Upcoming: " + hourlysummary + " Forcast: " + dailysummary
+                    
                     }
                 }
             }
@@ -245,13 +301,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 var placeMark: CLPlacemark! // Place details
                 placeMark = placeArray?[0]
                 if let city = placeMark.addressDictionary?["City"] as? NSString { // City
-                    //                print(city)
-                    //                if let state = placeMark.addressDictionary?["State"] as? NSString {
-                    //                    print(state)
-                    
                     let coords = "\(locValue.latitude),\(locValue.longitude)"
                     self.dataManager.getDataFromServer(coords, city: city as String)
-                    //            }
                 }
             }
         }
@@ -262,6 +313,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func newDataRecv() {
         blankeverything()
         dailyArray = dataManager.currentWeather.dailyforcast
+        hourlyArray = dataManager.currentWeather.hourlyforcast
         fillEverythingOut()
         dailyCollectionView.reloadData()
     }

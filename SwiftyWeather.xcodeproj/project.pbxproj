@@ -31,6 +31,10 @@
 		43914C841D2313D30082FFA2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946631CEA344B0093A8D7 /* Weather.swift */; };
 		43914C851D2314A40082FFA2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433946661CEA355D0093A8D7 /* DataManager.swift */; };
 		43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A755561CF6226000E5B7F6 /* DailyWeather.swift */; };
+		43D26D621D2DA10600B033A9 /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D26D611D2DA10600B033A9 /* HourlyWeather.swift */; };
+		43D26D631D2DA20B00B033A9 /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D26D611D2DA10600B033A9 /* HourlyWeather.swift */; };
+		43D26D641D2DA20C00B033A9 /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D26D611D2DA10600B033A9 /* HourlyWeather.swift */; };
+		43D26D681D2DB67C00B033A9 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D26D671D2DB67C00B033A9 /* HourlyWeatherCell.swift */; };
 		43D3EDE41D1182530031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43DC922A1CF778DA0062C5CC /* Assets.xcassets */; };
 		43D3EDE51D11894B0031F627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4374A7F31D10B8050025B7E5 /* Assets.xcassets */; };
 		43DC92251CF75E1B0062C5CC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC92241CF75E1B0062C5CC /* RoundedButton.swift */; };
@@ -99,6 +103,8 @@
 		43914C761D230B540082FFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43914C831D2313950082FFA2 /* SwiftyWeatherWidget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftyWeatherWidget-Bridging-Header.h"; sourceTree = "<group>"; };
 		43A755561CF6226000E5B7F6 /* DailyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
+		43D26D611D2DA10600B033A9 /* HourlyWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
+		43D26D671D2DB67C00B033A9 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HourlyWeatherCell.swift; path = ../HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		43DC92241CF75E1B0062C5CC /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 		43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedLabel.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				43DC92261CF75EAA0062C5CC /* RoundedTextView.swift */,
 				43DC92281CF75ECF0062C5CC /* RoundedLabel.swift */,
 				43DC922C1CF883C80062C5CC /* DailyWeatherCell.swift */,
+				43D26D671D2DB67C00B033A9 /* HourlyWeatherCell.swift */,
 				433946621CEA342D0093A8D7 /* Objective C Reachability Stuff */,
 			);
 			path = SwiftyWeather;
@@ -193,6 +200,7 @@
 				4339466E1CEB4D0D0093A8D7 /* Locations.swift */,
 				433946631CEA344B0093A8D7 /* Weather.swift */,
 				43A755561CF6226000E5B7F6 /* DailyWeather.swift */,
+				43D26D611D2DA10600B033A9 /* HourlyWeather.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,7 +376,9 @@
 				43A755571CF6226000E5B7F6 /* DailyWeather.swift in Sources */,
 				43DC92271CF75EAA0062C5CC /* RoundedTextView.swift in Sources */,
 				433946701CEB4D0D0093A8D7 /* Locations.swift in Sources */,
+				43D26D621D2DA10600B033A9 /* HourlyWeather.swift in Sources */,
 				433946691CEA356D0093A8D7 /* NetworkManager.swift in Sources */,
+				43D26D681D2DB67C00B033A9 /* HourlyWeatherCell.swift in Sources */,
 				43DC92291CF75ECF0062C5CC /* RoundedLabel.swift in Sources */,
 				433946641CEA344B0093A8D7 /* Weather.swift in Sources */,
 				4339466C1CEB4C9E0093A8D7 /* SwiftyWeatherModel.xcdatamodeld in Sources */,
@@ -389,6 +399,7 @@
 				43F5A5EA1D117FAF0001779B /* DailyWeather.swift in Sources */,
 				43F5A5EE1D1180690001779B /* Reachability.m in Sources */,
 				43F5A5E91D117FA50001779B /* DailyWeatherCell.swift in Sources */,
+				43D26D631D2DA20B00B033A9 /* HourlyWeather.swift in Sources */,
 				43F5A5ED1D117FB80001779B /* DataManager.swift in Sources */,
 				43F5A5EF1D1180C80001779B /* NetworkManager.swift in Sources */,
 				4374A7EF1D10B8050025B7E5 /* ViewController.swift in Sources */,
@@ -407,6 +418,7 @@
 				43914C721D230B540082FFA2 /* TodayViewController.swift in Sources */,
 				43914C841D2313D30082FFA2 /* Weather.swift in Sources */,
 				43914C821D2313740082FFA2 /* Reachability.m in Sources */,
+				43D26D641D2DA20C00B033A9 /* HourlyWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +597,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeatherTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherTelevision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -604,7 +616,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftyWeatherTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appsbypat.SwiftyWeatherTelevision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
@@ -679,6 +691,7 @@
 				43914C7B1D230B540082FFA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

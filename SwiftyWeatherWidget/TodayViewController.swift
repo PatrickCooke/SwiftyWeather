@@ -23,6 +23,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     //MARK: - Get Current Weather Method
     
+    
+    
     //MARK: - Fill Info Method
     
     func blankEverything() {

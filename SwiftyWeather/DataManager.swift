@@ -23,10 +23,10 @@ class DataManager: NSObject {
 //        print(addressString)
         #if os(tvOS)
         #else
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            defer {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            }
+//            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+//            defer {
+//                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//            }
         #endif
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString("\(addressString)") { (placemarks, error) in
@@ -61,10 +61,10 @@ class DataManager: NSObject {
     func getDataFromServer(coord: String, city :String) {
         #if os(tvOS)
         #else
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            defer {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            }
+//            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+//            defer {
+//                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//            }
         #endif
         let urlString = "https://\(baseURL)/forecast/\(API)/\(coord)"
         let url = NSURL(string: urlString)
@@ -89,7 +89,36 @@ class DataManager: NSObject {
                 self.currentWeather.curWind = tempWeatherDict.objectForKey("windSpeed") as! Double
                 
                 let hourlyWeatherDict = jsonResult.objectForKey("hourly") as! NSDictionary
+                let dataHourlyArray = hourlyWeatherDict.objectForKey("data") as! [NSDictionary]
+                
                 self.currentWeather.hourlySummary = hourlyWeatherDict.objectForKey("summary") as! String
+                
+                var hourlyArray = [HourlyWeather]()
+                for hourlyDict in dataHourlyArray {
+                    
+                    let hourlyW = HourlyWeather()
+                    
+                    let time = hourlyDict.objectForKey("time")
+                    hourlyW.hourTime = time as! Double
+                    let icon = hourlyDict.objectForKey("icon")
+                    hourlyW.hourIcon = icon as! String
+                    let precip = hourlyDict.objectForKey("precipProbability")
+                    hourlyW.hourPrecip = precip as! Double
+                    let realTemp = hourlyDict.objectForKey("temperature")
+                    hourlyW.hourActTemp = realTemp as! Double
+                    let appTemp = hourlyDict.objectForKey("apparentTemperature")
+                    hourlyW.hourAppTemp = appTemp as! Double
+                    if let precipType = hourlyDict.objectForKey("precipType") {
+                    hourlyW.hourPrecipType = precipType as! String
+                    } else {
+                        hourlyW.hourPrecipType = ""
+                    }
+                    
+                    hourlyArray.append(hourlyW)
+                }
+                self.currentWeather.hourlyforcast = hourlyArray
+                
+                
                 
                 let dailyWeatherDict = jsonResult.objectForKey("daily") as! NSDictionary
                 //print("\(dailyWeatherDict)")
@@ -119,6 +148,8 @@ class DataManager: NSObject {
                     dailyWArray.append(dailyW)
                 }
                 self.currentWeather.dailyforcast = dailyWArray
+                
+                
 
                 dispatch_async(dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "recvNewDataFromServer", object: nil))

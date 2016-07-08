@@ -1,18 +1,20 @@
 //
-//  DailyWeatherCell.swift
+//  HourlyWeatherCell.swift
 //  SwiftyWeather
 //
-//  Created by Patrick Cooke on 5/27/16.
+//  Created by Patrick Cooke on 7/6/16.
 //  Copyright © 2016 Patrick Cooke. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class DailyWeatherCell: UICollectionViewCell {
-    
-    @IBOutlet weak var dateLabel :UILabel!
-    @IBOutlet weak var dateIcon  :UIImageView!
+class HourlyWeatherCell: UICollectionViewCell {
+ 
+    @IBOutlet weak var timeLabel    :UILabel!
+    @IBOutlet weak var actTempLabel :UILabel!
+    @IBOutlet weak var appTempLabel :UILabel!
+    @IBOutlet weak var precipLabel  :UILabel!
     
     @IBInspectable var cornerRadius : CGFloat = 0 {
         didSet {
